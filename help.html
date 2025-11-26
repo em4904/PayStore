@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Help - PayStore</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      display: flex;
+      background-color: #f8f9fc;
+      color: #333;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #fff;
+      height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    }
+
+    .sidebar h2 {
+      color: #8b5cf6;
+      margin-bottom: 30px;
+    }
+
+    .sidebar nav a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      background-color: #e9d5ff;
+      color: #8b5cf6;
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    .faq, .contact {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      margin-bottom: 30px;
+    }
+
+    .faq-item {
+      margin-bottom: 20px;
+    }
+
+    .faq-item h4 {
+      color: #4f46e5;
+      margin-bottom: 8px;
+      cursor: pointer;
+    }
+
+    .faq-item p {
+      color: #555;
+      margin-left: 10px;
+    }
+
+    .contact h4 {
+      margin-bottom: 10px;
+      color: #4f46e5;
+    }
+
+    .contact p {
+      margin-bottom: 8px;
+      color: #555;
+    }
+
+    .contact a {
+      color: #8b5cf6;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>📄 PayStore</h2>
+    <nav>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="myfiles.html">My Files</a>
+      <a href="shared.html">Shared</a>
+      <a href="recent.html">Recent</a>
+      <a href="settings.html">Settings</a>
+      <a href="help.html" class="active">Help</a>
+      <a href="myplan.html">My Plan</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <h3>Help & Support</h3>
+
+    <div class="faq">
+      <div class="faq-item">
+        <h4>How do I upload files?</h4>
+        <p>Click on the "Upload" button in the dashboard or file sections, then select your files to upload.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Can I organize my files?</h4>
+        <p>Yes! Use tags and folders to categorize and organize your uploads efficiently.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How is billing calculated?</h4>
+        <p>Billing is based on the total storage space used. You pay only for what you use.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How do I share files?</h4>
+        <p>You can share files by clicking the share icon (🔗) next to your uploaded items.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Can I restore deleted files?</h4>
+        <p>Yes, deleted files can be restored from the Trash folder within 30 days of deletion.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How do I change my password?</h4>
+        <p>Go to Settings > Account > Change Password. Follow the on-screen instructions to update your credentials.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>How can I cancel or downgrade my plan?</h4>
+        <p>Navigate to the "My Plan" page and choose the option to cancel or downgrade your subscription.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Is there a mobile app?</h4>
+        <p>Yes, PayStore is available for both Android and iOS platforms. Search for "PayStore" on your app store.</p>
+      </div>
+
+      <div class="faq-item">
+        <h4>Need more help?</h4>
+        <p>Contact us at <a href="mailto:support@paystore.com">support@paystore.com</a> and we'll assist you promptly.</p>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h4>Contact Support</h4>
+      <p><strong>Email:</strong> <a href="mailto:support@paystore.com">support@paystore.com</a></p>
+      <p><strong>Live Chat:</strong> Available on Dashboard > Support (9:00 AM – 6:00 PM, Mon–Fri)</p>
+      <p><strong>Phone:</strong> +1 (800) 123-4567 (Business hours only)</p>
+    </div>
+  </div>
+</body>
+</html>

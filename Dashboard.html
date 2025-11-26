@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayStore Dashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+  
+    body {
+      display: flex;
+      background-color: #f8f9fc;
+      color: #333;
+    }
+  
+    .sidebar {
+      width: 250px;
+      background-color: #fff;
+      height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+  
+    .sidebar h2 {
+      color: #8b5cf6;
+      margin-bottom: 30px;
+    }
+  
+    .sidebar nav a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      margin: 10px 0;
+      border-radius: 8px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+  
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      background-color: #e9d5ff;
+      color: #8b5cf6;
+    }
+  
+    .storage-box {
+      background: #f5f3ff;
+      padding: 15px;
+      border-radius: 12px;
+      margin-top: 20px;
+      
+    }
+  
+    .progress-bar {
+      height: 6px;
+      background: #ddd;
+      border-radius: 3px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+  
+    .progress {
+      background-color: #8b5cf6;
+      height: 100%;
+      width: 65%;
+      transition: width 0.4s ease-in-out;
+    }
+  
+    .main {
+      flex: 1;
+      padding: 30px;
+      
+    }
+  
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+  
+    .search input {
+      padding: 10px;
+      width: 300px;
+      border: 1px solid #ccc;
+      border-radius: 8px 0 0 8px;
+      
+    }
+  
+    .search input:hover{
+      border-color: black;
+    }
+  
+    .search button {
+      padding: 10px 15px;
+      background: #8b5cf6;
+      color: white;
+      border: none;
+      border-radius: 0 8px 8px 0;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+  
+    .search button:hover {
+      background: #7c3aed;
+    }
+  
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  
+    .profile img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+  
+  
+    .cards {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+  
+    .card {
+      flex: 1;
+      min-width: 200px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+  
+    .card:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  
+    .recent-files {
+      margin-top: 30px;
+    }
+  
+    table {
+      width: 100%;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: box-shadow 0.3s ease;
+    }
+  
+    table:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+  
+    table th, table td {
+      padding: 15px;
+      text-align: left;
+    }
+  
+    table th {
+      background: #f1f5f9;
+    }
+  
+    .action-btns button {
+      background: none;
+      border: none;
+      margin-right: 10px;
+      cursor: pointer;
+
+    }
+  
+  
+  
+    .upgrade-btn {
+      background: #22c55e;
+      color: white;
+      padding: 8px 12px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  
+    .upgrade-btn:hover {
+      background: #16a34a;
+    }
+  
+    .storage-overview {
+      margin-top: 40px;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+  
+    .storage-overview h3 {
+      margin-bottom: 20px;
+    }
+  
+    .storage-details {
+      display: flex;
+      gap: 20px;
+    }
+  
+    .storage-details .bar {
+      flex: 1;
+    }
+  
+    .storage-details .label {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+  
+    .bar-container {
+      background: #eee;
+      height: 8px;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+  
+    .bar-fill {
+      height: 100%;
+     
+    }
+  
+    .bar-blue { background: #38bdf8; }
+    .bar-green { background: #22c55e; }
+    .bar-orange { background: #f59e0b; }
+    .bar-gray { background: #cbd5e1; }
+  </style>
+  
+</head>
+<body>
+  <div class="sidebar">
+    <h2>📄 PayStore</h2>
+    <nav>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="myfiles.html">My Files</a>
+        <a href="shared.html">Shared</a>
+        <a href="recent.html">Recent</a>
+        <a href="settings.html">Settings</a>
+        <a href="help.html">Help</a>
+        <a href="myplan.html">My Plan</a>
+    </nav>
+    <div class="storage-box">
+      <strong>Storage</strong>
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+      <p>6.5 GB of 10 GB used</p>
+      <button class="upgrade-btn">Upgrade Plan</button>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="search">
+        <input type="text" placeholder="Search files, folders...">
+        <button>Search</button>
+      </div>
+      <div class="profile">
+        <img src="profile.jpg" alt="user">
+        
+        <div>
+          <strong>Esha Mistry</strong><br>
+          <small style="color:#8b5cf6;">Premium Plan</small>
+        </div>
+      </div>
+    </div>
+
+    <h3>Dashboard</h3>
+    <div class="cards">
+      <div class="card">
+        <h2>📄 345</h2>
+        <p>Total Files</p>
+      </div>
+      <div class="card">
+        <h2>📁 28</h2>
+        <p>Folders</p>
+      </div>
+      <div class="card">
+        <h2>⬆️ 15</h2>
+        <p>Uploads Today</p>
+      </div>
+      <div class="card">
+        <h2>🔗 42</h2>
+        <p>Shared Files</p>
+      </div>
+    </div>
+
+    <div class="recent-files">
+      <h3 style="margin: 20px 0;">Recent Files</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Modified</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>📄 Project_Proposal.pdf</td>
+            <td>2.4 MB</td>
+            <td>Today, 10:30 AM</td>
+            <td class="action-btns">
+              <button>📥</button>
+              <button>🔗</button>
+              <button>⋮</button>
+            </td>
+          </tr>
+          <tr>
+            <td>🖼️ Vacation_Photo.jpg</td>
+            <td>5.8 MB</td>
+            <td>Yesterday, 8:15 PM</td>
+            <td class="action-btns">
+              <button>📥</button>
+              <button>🔗</button>
+              <button>⋮</button>
+            </td>
+          </tr>
+          <tr>
+            <td>📜 Meeting_Notes.docx</td>
+            <td>1.2 MB</td>
+            <td>Jan 15, 2023</td>
+            <td class="action-btns">
+              <button>📥</button>
+              <button>🔗</button>
+              <button>⋮</button>
+            </td>
+          </tr>
+          <tr>
+            <td>🎥 Product_Demo.mp4</td>
+            <td>18.7 MB</td>
+            <td>Jan 12, 2023</td>
+            <td class="action-btns">
+              <button>📥</button>
+              <button>🔗</button>
+              <button>⋮</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="storage-overview">
+      <h3>Storage Overview</h3>
+      <div class="storage-details">
+        <div class="bar">
+          <div class="label">Images</div>
+          <div class="bar-container"><div class="bar-fill bar-blue" style="width: 35%;"></div></div>
+          <div>3.5 GB</div>
+        </div>
+        <div class="bar">
+          <div class="label">Documents</div>
+          <div class="bar-container"><div class="bar-fill bar-green" style="width: 25%;"></div></div>
+          <div>2.5 GB</div>
+        </div>
+        <div class="bar">
+          <div class="label">Videos</div>
+          <div class="bar-container"><div class="bar-fill bar-orange" style="width: 30%;"></div></div>
+          <div>3.0 GB</div>
+        </div>
+        <div class="bar">
+          <div class="label">Other</div>
+          <div class="bar-container"><div class="bar-fill bar-gray" style="width: 10%;"></div></div>
+          <div>1.0 GB</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

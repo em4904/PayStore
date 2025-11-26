@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Files - PayStore</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background-color: #f8f9fc;
+      color: #333;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #fff;
+      height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    }
+
+    .sidebar h2 {
+      color: #8b5cf6;
+      margin-bottom: 30px;
+    }
+
+    .sidebar nav a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      background-color: #e9d5ff;
+      color: #8b5cf6;
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+    
+    
+    table {
+      width: 100%;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    table th, table td {
+      padding: 15px;
+      text-align: left;
+    }
+
+    table th {
+      background: #f1f5f9;
+    }
+
+    .action-btns button {
+      background: none;
+      border: none;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>📄 PayStore</h2>
+    <nav>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="myfiles.html">My Files</a>
+      <a href="shared.html">Shared</a>
+      <a href="recent.html">Recent</a>
+      <a href="settings.html">Settings</a>
+      <a href="help.html">Help</a>
+      <a href="myplan.html">My Plan</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <h3>My Files</h3>
+     
+<div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    
+    <div class="search" style="display: flex;">
+      <input type="text" placeholder="Search files..." style="
+        padding: 10px;
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 8px 0 0 8px;
+        font-size: 14px;
+      ">
+      <button style="
+        padding: 10px 15px;
+        background: #8b5cf6;
+        color: white;
+        border: none;
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
+        font-size: 14px;
+      ">Search</button>
+    </div>
+  
+    
+    <div>
+      <input type="file" id="fileUpload" style="display: none;" />
+      <button onclick="document.getElementById('fileUpload').click()" style="
+        padding: 10px 20px;
+        background: #22c55e;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+      ">Upload</button>
+    </div>
+  </div>
+  
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Date Uploaded</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="img1.jpg" target="_blank">📷 cat.jpg</a></td>
+          <td>3.2 MB</td>
+          <td>Apr 28, 2025</td>
+          <td class="action-btns">
+            <button>📥</button>
+            <button>🔗</button>
+            <button>⋮</button>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="MIDTERM TEST.pdf" target="_blank">📄 Midsem.pdf</a>
+          </td>
+          <td>250 KB</td>
+          <td>Mar 18, 2025</td>
+          <td class="action-btns">
+            <button>📥</button>
+            <button>🔗</button>
+            <button>⋮</button>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="" download>🎥 Launch_Teaser.mov</a></td>
+          <td>12.7 MB</td>
+          <td>Feb 05, 2025</td>
+          <td class="action-btns">
+            <button>📥</button>
+            <button>🔗</button>
+            <button>⋮</button>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="" download>📝 ToDo_List.txt</a></td>
+          <td>15 KB</td>
+          <td>May 1, 2025</td>
+          <td class="action-btns">
+            <button>📥</button>
+            <button>🔗</button>
+            <button>⋮</button>
+          </td>
+        </tr>
+        <tr>
+          <td><a href="" download>📷 Family_Reunion.png</a></td>
+          <td>2.1 MB</td>
+          <td>Jan 20, 2025</td>
+          <td class="action-btns">
+            <button>📥</button>
+            <button>🔗</button>
+            <button>⋮</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile - PayStore</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background-color: #f8f9fc;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #fff;
+      height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    }
+
+    .sidebar h2 {
+      color: #8b5cf6;
+      margin-bottom: 30px;
+    }
+
+    .sidebar nav a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      background-color: #e9d5ff;
+      color: #8b5cf6;
+    }
+
+    .profile-container {
+      flex: 1;
+      max-width: 1000px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    h2 {
+      color: #8b5cf6;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .section {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+    }
+
+    .section h3 {
+      color: #4f46e5;
+      margin-bottom: 15px;
+      font-size: 22px;
+    }
+
+    .plan-card {
+      background-color: #f9fafb;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      border: 1px solid #e5e7eb;
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .plan-card:hover {
+      
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .plan-card h4 {
+      color: #4f46e5;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .plan-card p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 18px;
+      font-weight: bold;
+      color: #10b981;
+      margin-bottom: 15px;
+    }
+
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .button {
+      background-color: #4f46e5;
+      color: white;
+      padding: 12px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .button:hover {
+      background-color: #3730a3;
+    }
+
+    .user-info p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 8px;
+    }
+
+    .user-info strong {
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h2>📄 PayStore</h2>
+    <nav>
+        <a href="Dashboard.html">Dashboard</a>
+        <a href="myfiles.html">My Files</a>
+        <a href="shared.html">Shared</a>
+        <a href="recent.html">Recent</a>
+        <a href="settings.html">Settings</a>
+        <a href="help.html">Help</a>
+        <a href="myplan.html">My Plan</a>
+    </nav>
+  </div>
+
+  <div class="profile-container">
+    <div class="section">
+      <h2>User Profile</h2>
+      <div class="user-info">
+        <p><strong>Name:</strong> Esha Mistry</p>
+        <p><strong>Email:</strong> e123@gmail.com</p>
+        <p><strong>Username:</strong> esha123</p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Your Subscription</h3>
+      <div class="plan-card">
+        <h4>Premium Plan</h4>
+        <p>Unlimited file storage<br />Priority support<br />Shared access</p>
+        <div class="price">Rs-2999.99/month</div>
+        <a href="#" class="button">Manage Plan</a>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Other Plans</h3>
+      <div class="plans">
+        <div class="plan-card">
+          <h4>Basic Plan</h4>
+          <p>5 GB storage<br />Email support</p>
+          <div class="price">Rs-999.99/month</div>
+          <a href="#" class="button">Select Plan</a>
+        </div>
+        <div class="plan-card">
+          <h4>Pro Plan</h4>
+          <p>50 GB storage<br />Email & chat support<br />File versioning</p>
+          <div class="price">Rs-1999.99/month</div>
+          <a href="#" class="button">Select Plan</a>
+        </div>
+        <div class="plan-card">
+          <h4>Enterprise</h4>
+          <p>Custom storage<br />Dedicated support<br />Team collaboration</p>
+          <div class="price">Contact us</div>
+          <a href="#" class="button">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

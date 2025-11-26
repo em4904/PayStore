@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recent Files - PayStore</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      display: flex;
+      background-color: #f8f9fc;
+      color: #333;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #fff;
+      height: 100vh;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.05);
+    }
+
+    .sidebar h2 {
+      color: #8b5cf6;
+      margin-bottom: 30px;
+    }
+
+    .sidebar nav a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      margin: 10px 0;
+      border-radius: 8px;
+    }
+
+    .sidebar nav a:hover,
+    .sidebar nav a.active {
+      background-color: #e9d5ff;
+      color: #8b5cf6;
+    }
+
+    .main {
+      flex: 1;
+      padding: 30px;
+    }
+
+    h3 {
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .file-card {
+      background: white;
+      border-radius: 12px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .file-icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .file-name {
+      font-weight: bold;
+      margin-bottom: 8px;
+      color: #4f46e5;
+      text-decoration: none;
+    }
+
+    .file-meta {
+      font-size: 12px;
+      color: #666;
+      margin-bottom: 10px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .actions button {
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>📄 PayStore</h2>
+    <nav>
+      <a href="Dashboard.html">Dashboard</a>
+      <a href="myfiles.html">My Files</a>
+      <a href="shared.html">Shared</a>
+      <a href="recent.html" class="active">Recent</a>
+      <a href="settings.html">Settings</a>
+      <a href="help.html">Help</a>
+      <a href="myplan.html">My Plan</a>
+    </nav>
+  </div>
+
+  <div class="main">
+    <h3>Recent Files</h3>
+    <div class="grid">
+      <div class="file-card">
+        <div class="file-icon">📄</div>
+        <a class="file-name" href="Report.pdf" target="_blank">Report.pdf</a>
+        <div class="file-meta">Opened: May 5, 2025</div>
+        <div class="actions">
+          <button>📥</button>
+          <button>🔗</button>
+          <button>⋮</button>
+        </div>
+      </div>
+      <div class="file-card">
+        <div class="file-icon">📷</div>
+        <a class="file-name" href="SummerTrip.jpg" target="_blank">SummerTrip.jpg</a>
+        <div class="file-meta">Viewed: May 3, 2025</div>
+        <div class="actions">
+          <button>📥</button>
+          <button>🔗</button>
+          <button>⋮</button>
+        </div>
+      </div>
+      <div class="file-card">
+        <div class="file-icon">🎥</div>
+        <a class="file-name" href="Promo.mp4" target="_blank">Promo.mp4</a>
+        <div class="file-meta">Watched: Apr 30, 2025</div>
+        <div class="actions">
+          <button>📥</button>
+          <button>🔗</button>
+          <button>⋮</button>
+        </div>
+      </div>
+      <div class="file-card">
+        <div class="file-icon">📝</div>
+        <a class="file-name" href="Notes.txt" target="_blank">Notes.txt</a>
+        <div class="file-meta">Opened: Apr 29, 2025</div>
+        <div class="actions">
+          <button>📥</button>
+          <button>🔗</button>
+          <button>⋮</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
